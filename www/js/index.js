@@ -27,8 +27,17 @@ function calculate() {
     try {
         // Substitua % por /100 para calcular a porcentagem
         expression = expression.replace(/%/g, '/100');
-        // Substitua o número atual na expressão antes de avaliar
-        expression = expression.replace(/[\d.]+/, currentNumber);
+        
+        // Use uma expressão regular para encontrar números na expressão
+        var numbers = expression.match(/[-+]?[0-9]*\.?[0-9]+/g) || [];
+        numbers = numbers.map(function(num) {
+            return parseFloat(num);
+        });
+
+        // Substitua os números na expressão pelo seu valor
+        for (var i = 0; i < numbers.length; i++) {
+            expression = expression.replace(numbers[i], numbers[i].toString());
+        }
 
         var result = eval(expression);
         document.getElementById('display').value = result;
