@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+    <div id="calculator">
+        <input type="text" id="display" value="0" disabled>
+        <div class="buttons">
+            <button class="lightgray" onclick="clearDisplay()">AC</button>
+            <button class="lightgray" id="toggleSign" onclick="toggleSign()">+/-</button>
+            <!-- <button class="lightgray" onclick="appendToDisplay('+/-')">+/-</button> -->
+            <button class="lightgray" onclick="appendToDisplay('%')">%</button>
+            <button class="orange" onclick="appendToDisplay('/')">&#247</button>
+            <button class="grey" onclick="appendToDisplay('7')">7</button>
+            <button class="grey" onclick="appendToDisplay('8')">8</button>
+            <button class="grey" onclick="appendToDisplay('9')">9</button>
+            <button class="orange" onclick="appendToDisplay('*')">x</button>
+            <button class="grey" onclick="appendToDisplay('4')">4</button>
+            <button class="grey" onclick="appendToDisplay('5')">5</button>
+            <button class="grey" onclick="appendToDisplay('6')">6</button>
+            <button class="orange" onclick="appendToDisplay('-')">-</button>
+            <button class="grey" onclick="appendToDisplay('1')">1</button>
+            <button class="grey" onclick="appendToDisplay('2')">2</button>
+            <button class="grey"onclick="appendToDisplay('3')">3</button>
+            <button class="orange" onclick="appendToDisplay('+')">+</button>
+            <button class="grey" class="double" onclick="appendToDisplay('0')">0</button>
+            <button class="grey" class="double2" onclick="appendToDisplay('')"></button>
+
+            <button class="grey" onclick="appendToDisplay(',')">.</button>
+            <button class="orange" onclick="calculate()">=</button>
+            
+            
+        </div>
+    </div>
+    <script src="js/index.js"></script>
+</body>
+</html>
