@@ -28,22 +28,18 @@ function calculate() {
         // Substitua % por /100 para calcular a porcentagem
         expression = expression.replace(/%/g, '/100');
         
-        // Use uma expressão regular para encontrar números na expressão
-        var numbers = expression.match(/[-+]?[0-9]*\.?[0-9]+/g) || [];
-        numbers = numbers.map(function(num) {
-            return parseFloat(num);
-        });
-
-        // Substitua os números na expressão pelo seu valor
-        for (var i = 0; i < numbers.length; i++) {
-            expression = expression.replace(numbers[i], numbers[i].toString());
-        }
-
+        // Substitua vírgulas por pontos para garantir que o JavaScript interprete os números corretamente
+        expression = expression.replace(/,/g, '.');
+        
+        // Avalie a expressão diretamente usando eval()
         var result = eval(expression);
-        document.getElementById('display').value = result;
+        
+        // Atualize o valor no display, mantendo o formato decimal
+        document.getElementById('display').value = parseFloat(result).toLocaleString('en-US', { maximumFractionDigits: 10 });
         currentNumber = result; // Atualiza o número atual com o resultado
     } catch (error) {
         document.getElementById('display').value = 'Erro';
         currentNumber = 0; // Reinicia o número atual em caso de erro
     }
 }
+
