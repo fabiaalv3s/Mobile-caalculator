@@ -27,10 +27,7 @@ function calculate() {
     try {
         // Substitua % por /100 para calcular a porcentagem
         expression = expression.replace(/%/g, '/100');
-        
-        // Substitua vírgulas por pontos para garantir que o JavaScript interprete os números corretamente
-        expression = expression.replace(/,/g, '.');
-        
+   
         // Avalie a expressão diretamente usando eval()
         var result = eval(expression);
         
