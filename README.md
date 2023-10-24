@@ -2,6 +2,10 @@
 
 Projeto de desenvolvimento mobile, criado como parte dos estudos na Fatec de Taubaté.
 
+
+![Calculadora](https://github.com/fabiaalv3s/Mobile-caalculator/blob/master/image/CALCULATOR.png)
+
+
 ## Tecnologias Utilizadas
 
 - ![HTML](https://img.shields.io/badge/-HTML-E34F26?style=flat-square&logo=html5&logoColor=white)
